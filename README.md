@@ -16,7 +16,7 @@ This repository contains an analysis of mortality rates across Polish voivodeshi
 - Seasonal pattern: higher in autumn-winter, lower in spring-summer.
 
 **Figures:**
-- ![Fig. 1.1 – Annual mortality trends (2016–2024) for all voivodeships](path/to/fig1_1.png)
+- ![Fig. 1.1 – Annual mortality trends (2016–2024) for all voivodeships](Data_analysis/dane_roczne.png)
 - ![Fig. 1.2 – Monthly mortality distribution for Małopolskie](path/to/fig1_2.png)
 
 ---
