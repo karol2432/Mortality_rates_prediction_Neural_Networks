@@ -54,6 +54,121 @@ This repository contains an analysis of mortality rates across Polish voivodeshi
 
 ---
 
+## 4. Feature Preparation
+
+**Data:** Monthly mortality rates for 16 voivodeships (2016–2023).  
+
+**Input features:**
+- Lagged values (previous 12 months) to capture temporal dependencies.
+- One-Hot Encoded voivodeship identifiers.
+- Cyclic representation of months (sin/cos) to preserve seasonality.
+- Standardization of numerical features (mean=0, std=1).
+
+**Figures (example):**
+- ![Feature distribution or example](path/to/feature_plot.png)
+
+---
+
+## 5. MLP Model
+
+**Architecture:**
+- Input layer: all prepared features.
+- One hidden layer with 12 neurons, ReLU activation.
+- Dropout layer (0.2) to reduce overfitting.
+- Output layer: single neuron for mortality rate prediction.
+- Loss function: Mean Squared Error (MSE).
+- Optimizer: Adam.
+
+**Notes:** Small dataset → one hidden layer to avoid overfitting.
+
+---
+
+## 6. Training and Validation
+
+**Procedure:**
+- Supervised learning using historical data.
+- Training set: 2016–2022, Validation set: 2023.
+- No shuffling → chronological order preserved.
+- Early stopping applied based on validation loss.
+
+**Figure:**
+- ![Training and validation loss over epochs](path/to/fig2_1.png)
+
+---
+
+## 7. 2024 Mortality Prediction
+
+**Prediction approach:**
+- Iterative monthly prediction using lagged inputs.
+- Standardization and inverse transformation applied to predicted values.
+- 95% empirical confidence intervals computed based on 2023 validation errors.
+
+**Figure:**
+- ![Predicted vs. actual mortality rates for 2024](path/to/fig2_2.png)
+
+**Notes:** Confidence intervals allow visualization of prediction uncertainty for each voivodeship.
+
+---
+
+## 8. Forecast Quality Assessment
+
+**Metrics used:**
+- **MAE (Mean Absolute Error):** Average absolute deviation of predictions from actual values.
+- **RMSE (Root Mean Square Error):** Penalizes larger errors more heavily.
+- **MAPE (Mean Absolute Percentage Error):** Average percentage error relative to actual values.
+
+**Evaluation approach:**
+- **Global:** Assessment across all voivodeships and months of 2024.
+- **Regional:** Assessment individually for each voivodeship to identify differences in model performance.
+
+**Figure/Table placeholders:**
+- ![Global vs regional metrics](path/to/metrics_table.png)
+
+**Notes:**  
+Global metrics show moderate errors, generally within acceptable ranges (MAE ~0.07–0.08, MAPE ~7–8%). Regional metrics reveal variation between voivodeships, with better predictions for densely populated regions and larger errors in smaller or more variable regions.
+
+---
+
+## 9. Analysis of Forecast Results
+
+### 9.1 Global Analysis
+- Predictions reproduce overall trends and seasonal patterns for the whole country.
+- Relative errors remain low on average, indicating good generalization of the MLP model.
+- Large errors are rare and do not significantly affect global accuracy.
+
+### 9.2 Regional Analysis
+- Performance varies between voivodeships.
+- Best predictions are in regions with larger populations and stable mortality rates.
+- Higher errors occur in regions with smaller populations or more volatile mortality rates.
+- Seasonal patterns (winter peaks, summer drops) are captured in all regions.
+
+### 9.3 Comparison with Historical Data
+- Model correctly reflects post-pandemic stabilization of mortality rates.
+- Seasonal fluctuations are well captured for all voivodeships.
+- Predictions generally follow trends of historical observations while avoiding overestimation of pandemic-era spikes.
+
+---
+
+## 10. Limitations
+- Short historical data series limits long-term trend prediction.
+- Rare or extreme events may not be predicted accurately.
+- Model does not include economic or health-related explanatory variables.
+- Only tested on 2024 data, limiting assessment of long-term stability.
+
+---
+
+## 11. Summary and Conclusions
+- MLP model effectively predicts mortality rates and captures seasonal dynamics.
+- Performance is better in regions with large populations and stable trends.
+- Regional differences suggest potential improvement by adding explanatory features.
+- Approach confirms the usefulness of neural networks for demographic time series prediction.
+- Future work could include longer data series and additional variables for improved accuracy.
+
+
+
+
+
+
 ## Usage
 
 - Replace `path/to/...` with your actual plot file paths.
