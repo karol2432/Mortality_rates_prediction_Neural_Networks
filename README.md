@@ -17,7 +17,7 @@ This repository contains an analysis of mortality rates across Polish voivodeshi
 
 **Figures:**
 - ![Fig. 1.1 – Annual mortality trends (2016–2024) for all voivodeships](Data_analysis/dane_roczne.png)
-- ![Fig. 1.2 – Monthly mortality distribution for Małopolskie](path/to/fig1_2.png)
+- ![Fig. 1.2 – Monthly mortality distribution for Małopolskie](Data_analysis/miesieczne.png)
 
 ---
 
@@ -34,8 +34,8 @@ This repository contains an analysis of mortality rates across Polish voivodeshi
 - **Age 65+:** male mortality still higher, greater fluctuations; some regions show no significant differences.
 
 **Figures:**
-- ![Fig. 1.3 – Boxplot M/F ratio (0–64)](path/to/fig1_3.png)
-- ![Fig. 1.4 – Boxplot M/F ratio (65+)](path/to/fig1_4.png)
+- ![Fig. 1.3 – Boxplot M/F ratio (0–64)](Data_analysis/boxplotm.png)
+- ![Fig. 1.4 – Boxplot M/F ratio (65+)](path/to/boxplots.png)
 
 ---
 
@@ -50,7 +50,7 @@ This repository contains an analysis of mortality rates across Polish voivodeshi
 **Implication:** Lagged variables can be used as input in predictive models.
 
 **Figures:**
-- ![Fig. 1.5 – ACF & PACF plots for Małopolskie](path/to/fig1_5.png)
+- ![Fig. 1.5 – ACF & PACF plots for Małopolskie](Data_analysis/acfpcf.png)
 
 ---
 
