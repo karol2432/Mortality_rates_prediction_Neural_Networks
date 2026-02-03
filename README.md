@@ -1,6 +1,7 @@
 # Mortality Rate Analysis in Poland (2016–2024)
 
-This repository contains an analysis of mortality rates across Polish voivodeships from 2016 to 2024, including descriptive statistics, gender differences, and autocorrelation analysis.
+This project uses a Multi-Layer Perceptron (MLP) neural network to predict monthly mortality rates across Polish provinces. The model leverages historical time series data, capturing seasonal patterns, regional differences, and temporal dependencies. It demonstrates how artificial neural networks can be applied to forecast demographic indicators and analyze trends over time.
+
 
 ---
 
@@ -35,7 +36,7 @@ This repository contains an analysis of mortality rates across Polish voivodeshi
 
 **Figures:**
 - ![Fig. 1.3 – Boxplot M/F ratio (0–64)](Data_analysis/boxplotm.png)
-- ![Fig. 1.4 – Boxplot M/F ratio (65+)](path/to/boxplots.png)
+- ![Fig. 1.4 – Boxplot M/F ratio (65+)](Data_analysis/boxplots.png)
 
 ---
 
@@ -63,10 +64,6 @@ This repository contains an analysis of mortality rates across Polish voivodeshi
 - One-Hot Encoded voivodeship identifiers.
 - Cyclic representation of months (sin/cos) to preserve seasonality.
 - Standardization of numerical features (mean=0, std=1).
-
-**Figures (example):**
-- ![Feature distribution or example](path/to/feature_plot.png)
-
 ---
 
 ## 5. MLP Model
@@ -79,8 +76,6 @@ This repository contains an analysis of mortality rates across Polish voivodeshi
 - Loss function: Mean Squared Error (MSE).
 - Optimizer: Adam.
 
-**Notes:** Small dataset → one hidden layer to avoid overfitting.
-
 ---
 
 ## 6. Training and Validation
@@ -92,7 +87,7 @@ This repository contains an analysis of mortality rates across Polish voivodeshi
 - Early stopping applied based on validation loss.
 
 **Figure:**
-- ![Training and validation loss over epochs](path/to/fig2_1.png)
+- ![Training and validation loss over epochs](Model/stratytr.png)
 
 ---
 
@@ -104,9 +99,7 @@ This repository contains an analysis of mortality rates across Polish voivodeshi
 - 95% empirical confidence intervals computed based on 2023 validation errors.
 
 **Figure:**
-- ![Predicted vs. actual mortality rates for 2024](path/to/fig2_2.png)
-
-**Notes:** Confidence intervals allow visualization of prediction uncertainty for each voivodeship.
+- ![Predicted vs. actual mortality rates for 2024](Model/wyniki.png)
 
 ---
 
@@ -122,7 +115,7 @@ This repository contains an analysis of mortality rates across Polish voivodeshi
 - **Regional:** Assessment individually for each voivodeship to identify differences in model performance.
 
 **Figure/Table placeholders:**
-- ![Global vs regional metrics](path/to/metrics_table.png)
+- ![Global vs regional metrics](Model/metrykim.png)
 
 **Notes:**  
 Global metrics show moderate errors, generally within acceptable ranges (MAE ~0.07–0.08, MAPE ~7–8%). Regional metrics reveal variation between voivodeships, with better predictions for densely populated regions and larger errors in smaller or more variable regions.
@@ -164,20 +157,3 @@ Global metrics show moderate errors, generally within acceptable ranges (MAE ~0.
 - Approach confirms the usefulness of neural networks for demographic time series prediction.
 - Future work could include longer data series and additional variables for improved accuracy.
 
-
-
-
-
-
-## Usage
-
-- Replace `path/to/...` with your actual plot file paths.
-- The README focuses on observations and key insights; for methodology details, refer to the main report.
-
----
-
-## References
-
-1. [Author et al., Year] – Original data sources and statistical references.
-2. [Newey-West, HAC estimator references]
-3. [Other sources if needed]
